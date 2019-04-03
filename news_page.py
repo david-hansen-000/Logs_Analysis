@@ -84,7 +84,8 @@ def top3():
     sql = "select slug, popular from top3_view"
     results = "".join(
       '\"%s\" -- %d views\n'
-      % (slug.title().replace('-', ' '), popular) for slug, popular in get_sql(sql))
+      % (slug.title().replace('-', ' '), popular)
+      for slug, popular in get_sql(sql))
     return results
 
 
